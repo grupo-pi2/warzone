@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Warzone{% endblock %}
+
+{% block page_content %}
+<body class="is-preload">
+<div id="main">
+
+    <!-- Agendamento -->
+        <section id="agendamento">
+            <div class="container">
+
+                <h1><strong>Agende seu horário</strong></h1>
+
+                <p></p>
+
+                {{ wtf.quick_form(form) }}
+
+                <p></p>
+                
+                <footer>
+                    <a href="/"><-Retornar à pagina inicial</a>
+                </footer>
+
+            </div>
+        </section>
+</div>
+</body>
+
+
+{% endblock %}

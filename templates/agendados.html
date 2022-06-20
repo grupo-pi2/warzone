@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Warzone{% endblock %}
+
+{% block page_content %}
+<div id="main">
+
+    <!-- Consulta -->
+        <section id="top">
+            <div class="container">
+
+                <h1><b>Horários Agendados</b></h1>
+                <br>
+                
+                <table>
+                    <thead>
+                        <th>Dia</th>
+                        <th>Horário</th>
+                        <th>Banda</th>
+                        <th>Telefone</th>
+                    </thead>
+                <tbody>
+                    {% for agendado in agendados%}
+                        <tr>
+                            <td>{{agendado.dia}}</td>
+                            <td>{{agendado.horario}}</td>
+                            <td>{{agendado.banda}}</td>
+                            <td>{{agendado.celular}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+                </table>
+                <footer>
+                    <a href="/"><-Retornar à pagina inicial</a>
+                </footer>
+            </div>
+        </section>
+
+
+{% endblock %}

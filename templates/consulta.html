@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Warzone{% endblock %}
+
+{% block page_content %}
+<div id="main">
+
+    <!-- Consulta -->
+        <section id="top">
+            <div class="container">
+
+                <h1><b>Consulte os horários disponíveis</b></h1>
+
+                <p></p>
+
+                {{ wtf.quick_form(form) }}
+
+                <p></p>
+
+                {% if livres|length%}
+                    <table class="table">
+                        <thead>
+                            <th scope="col">Horários disponíveis</th>
+                        </thead>
+                    <tbody>
+                        {% for horario in livres%}<tr><td>{{horario}}</td></tr>{% endfor %}
+                    </tbody>
+                    </table>
+
+                    <p></p>
+
+                    <footer>
+                        <a href="agendamento" class="button">Agende seu horário</a>
+                    </footer>
+                {% endif %}
+
+                
+            </div>
+        </section>
+
+
+{% endblock %}
